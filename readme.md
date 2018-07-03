@@ -26,7 +26,8 @@ php artisan key:generate
 
 ##### Задание 1
 
-Реализовать интерфейс `CurrencyInterface`.
+Реализовать класс `Currency`.
+Реализовать класс `CurrencyGenerator`.
 Реализовать интерфейс `CurrencyRepositoryInterface` и зарегистрировать в сервис контейнере Laravel.
 Реализовать класс `GetCurrenciesCommandHandler` и вернуть список криптовалют.
 Реализовать класс `GetPopularCurrenciesCommandHandler` и вернуть список из 3-х наиболее покупаемых криптовалют.
