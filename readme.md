@@ -7,6 +7,7 @@ Binary Studio Academy PHP 2018
 
 Ознакомиться с фреймворком, поработать с сервис-контейнером и архитектурой в целом. 
 Ознакомиться с механизмом инициализации(bootstrap) и обработки реквеста пользователя.
+Ознакомиться с тестовым окружением в Laravel.
 
 #### Установка
 
@@ -26,16 +27,18 @@ php artisan key:generate
 
 ##### Задание 1
 
-Реализовать класс `Currency`.
-Реализовать класс `CurrencyGenerator`.
-Реализовать интерфейс `CurrencyRepositoryInterface` и зарегистрировать в сервис контейнере Laravel.
-Реализовать класс `GetCurrenciesCommandHandler` и вернуть список криптовалют.
-Реализовать класс `GetPopularCurrenciesCommandHandler` и вернуть список из 3-х наиболее покупаемых криптовалют.
-Реализовать класс `GetMostChangedCurrencyCommandHandler` и вернуть валюту, стоимось которой меняется цене чаще других.
+* Реализовать класс `Currency`.
+* Реализовать класс `CurrencyGenerator`.
+* Реализовать интерфейс `CurrencyRepositoryInterface` и зарегистрировать в сервис контейнере Laravel.
+* Реализовать класс `GetCurrenciesCommandHandler` и вернуть список криптовалют.
+* Реализовать класс `GetPopularCurrenciesCommandHandler` и вернуть список из 3-х наиболее дорогих криптовалют, 
+отсортированных по убыванию цены.
+* Реализовать класс `GetMostChangedCurrencyCommandHandler` и вернуть валюту, стоимось которой меняется цене чаще других.
 
 Данные можно взять с сайта [https://coinmarketcap.com/](https://coinmarketcap.com/).
 
 ##### Задание 2
+* Реализовать класс `CurrencyPresenter`.
 
 * Реализовать маршрут `api/currencies` в файле `routes/api.php` 
     * получить список всех криптовалют в формате json 
