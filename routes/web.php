@@ -10,7 +10,5 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'CurrencyControllerWeb@getAllCurrencies');
+Route::get('/currencies/popular', 'CurrencyControllerWeb@getPopularCurrencies')->name('popular');

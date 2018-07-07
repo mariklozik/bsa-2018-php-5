@@ -4,6 +4,9 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
+use App\Services\CurrencyRepository;
+use App\Services\CurrencyGenerator;
+
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -23,6 +26,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->bind(CurrencyRepository::class, function () {
+            return new CurrencyRepository(CurrencyGenerator::generate());
+        });
     }
 }
