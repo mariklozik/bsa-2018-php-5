@@ -2,7 +2,7 @@
 namespace App\Http\Controllers;
 
 use App\Services\CurrencyPresenter;
-use App\Services\CurrencyRepository;
+use App\Services\CurrencyRepositoryInterface;
 use App\Services\GetCurrenciesCommandHandler;
 use App\Services\GetPopularCurrenciesCommandHandler;
 
@@ -12,7 +12,7 @@ class CurrencyControllerWeb
     private $allCurrencies;
     private $popularCurrencies;
 
-    public function getAllCurrencies(CurrencyRepository $repository)
+    public function getAllCurrencies(CurrencyRepositoryInterface $repository)
     {
         $this->allCurrencies = new GetCurrenciesCommandHandler($repository);
         $currencies = $this->allCurrencies->handle();
@@ -24,7 +24,7 @@ class CurrencyControllerWeb
 
         return view('allCurrencies', compact('allCurrencies'));
     }
-    public function getPopularCurrencies(CurrencyRepository $repository)
+    public function getPopularCurrencies(CurrencyRepositoryInterface $repository)
     {
         $this->popularCurrencies = new GetPopularCurrenciesCommandHandler($repository);
         $currencies = $this->popularCurrencies->handle();

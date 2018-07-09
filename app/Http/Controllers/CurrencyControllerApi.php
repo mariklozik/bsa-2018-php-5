@@ -2,7 +2,7 @@
 namespace App\Http\Controllers;
 
 use App\Services\CurrencyPresenter;
-use App\Services\CurrencyRepository;
+use App\Services\CurrencyRepositoryInterface;
 use App\Services\GetCurrenciesCommandHandler;
 use App\Services\GetMostChangedCurrencyCommandHandler;
 
@@ -10,7 +10,7 @@ class CurrencyControllerApi
 {
     private $allCurrencies;
 
-    public function getAllCurrencies(CurrencyRepository $repository)
+    public function getAllCurrencies(CurrencyRepositoryInterface $repository)
     {
         $this->allCurrencies = $repository;
 
@@ -26,7 +26,7 @@ class CurrencyControllerApi
         return response()->json( $currencies );
     }
 
-    public function getUnstableCurrencies(CurrencyRepository $repository)
+    public function getUnstableCurrencies(CurrencyRepositoryInterface $repository)
     {
         $this->allCurrencies = $repository;
         $curr = new GetMostChangedCurrencyCommandHandler($this->allCurrencies);
